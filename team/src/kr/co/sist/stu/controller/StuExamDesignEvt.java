@@ -6,6 +6,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.List;
 
+import javax.swing.ButtonModel;
 import javax.swing.JOptionPane;
 
 import kr.co.sist.admin.dto.examItemDTO;
@@ -46,7 +47,14 @@ public class StuExamDesignEvt extends WindowAdapter implements ActionListener {
 	}
 	
 	public void submitExamProcess() {
-		JOptionPane.showMessageDialog(sed, "시험 제출 기능 구현 필요");
+		//		시험 제출 기능 구현 필요
+		String ex1 = sed.getGbSelectButton().get(0).getSelection().getActionCommand();
+		String ex2 = sed.getGbSelectButton().get(1).getSelection().getActionCommand();
+		String ex3 = sed.getGbSelectButton().get(2).getSelection().getActionCommand();
+		String ex4 = sed.getGbSelectButton().get(3).getSelection().getActionCommand();
+		String ex5 = sed.getGbSelectButton().get(4).getSelection().getActionCommand();
+		
+		
 	}
 	
 

@@ -79,4 +79,31 @@ public class StuExamDAO {
 		
 		return list;
 	}//searchExamItem
+	
+	public int insertExamItem(examItemDTO eiDTO) throws IOException, SQLException{
+		int rowCnt =0;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		GetConnection gc = GetConnection.getInstance();
+		try {
+			con = gc.getConn();
+			
+			String insertReport = "	";
+			
+			pstmt = con.prepareStatement(insertReport);
+			
+//			pstmt.setInt(1, );
+//			pstmt.setInt(2, );
+			
+			rowCnt = pstmt.executeUpdate();
+			
+		}finally {
+			gc.dbClose(con, pstmt, null);
+		}//end finally
+		
+		return rowCnt;
+	}//insertCouseSub
+		
+	
 }//class

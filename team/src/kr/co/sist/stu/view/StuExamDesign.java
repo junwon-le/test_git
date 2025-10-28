@@ -28,6 +28,7 @@ public class StuExamDesign extends JDialog{
 	
 	private JButton jbtnSubmit;
 	private StuCourseMgrDesign scmd;
+	private ButtonGroup[] bg;
 	
 	
 	public StuExamDesign(StuCourseMgrDesign scmd, boolean modal) {
@@ -62,17 +63,25 @@ public class StuExamDesign extends JDialog{
 			
 			jlblExamQuest[i] = new JLabel();
 			op1[i] = new JRadioButton("1");
+			op1[i].setActionCommand("1");
 			op2[i] = new JRadioButton("2");
+			op2[i].setActionCommand("2");
 			op3[i] = new JRadioButton("3");
+			op3[i].setActionCommand("3");
 			op4[i] = new JRadioButton("4");
+			op4[i].setActionCommand("4");
 			
-			ButtonGroup bg = new ButtonGroup();
-			bg.add(op1[i]);
-			bg.add(op2[i]);
-			bg.add(op3[i]);
-			bg.add(op4[i]);
+			bg = new ButtonGroup[5];
 			
-			gbSelectButton.add(bg);
+			bg[i] = new ButtonGroup();
+			bg[i].add(op1[i]);
+			bg[i].add(op2[i]);
+			bg[i].add(op3[i]);
+			bg[i].add(op4[i]);
+			
+			gbSelectButton.add(bg[i]);
+			
+			
 			
 			jpcenterSub.add(jlblExamQuest[i]);
 			jpcenterSub.add(op1[i]);
@@ -175,6 +184,9 @@ public class StuExamDesign extends JDialog{
 		return scmd;
 	}
 
+	public ButtonGroup[] getBg() {
+		return bg;
+	}
 
 
 	
